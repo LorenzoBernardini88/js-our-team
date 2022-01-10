@@ -37,7 +37,7 @@ let teamCont = document.querySelector('.team-container');
   for(i=0; i<team.length; i++){
 
     teamContainer(team[i].name,team[i].role,team[i].image);
-  }
+  } 
   
   function teamContainer (name,role,image){
 
@@ -55,7 +55,7 @@ let teamCont = document.querySelector('.team-container');
               </div>
             </div>
     `
-  }
+  } 
   
   function getMember(){
 
@@ -69,7 +69,7 @@ let teamCont = document.querySelector('.team-container');
     
     return newCard;
     
-  }
+  } 
   
   
   let buttonCreate = document.getElementById('addMemberButton');

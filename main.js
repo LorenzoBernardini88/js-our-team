@@ -32,29 +32,29 @@ const team = [
 ];
 
 
-let teamCont = document.querySelector('.team-container');
+let teamCont = document.querySelector('.team-container'); 
+
+function teamContainer (name,role,image){
+
+  teamCont.innerHTML +=`
+  <div class="team-card">
+            <div class="card-image">
+              <img
+                src="img/${image}"
+                alt="${name}"
+              />
+            </div>
+            <div class="card-text">
+              <h3>${name}</h3>
+              <p>${role}</p>
+            </div>
+          </div>
+  `
+} 
 
   for(i=0; i<team.length; i++){
 
     teamContainer(team[i].name,team[i].role,team[i].image);
-  } 
-  
-  function teamContainer (name,role,image){
-
-    teamCont.innerHTML +=`
-    <div class="team-card">
-              <div class="card-image">
-                <img
-                  src="img/${image}"
-                  alt="${name}"
-                />
-              </div>
-              <div class="card-text">
-                <h3>${name}</h3>
-                <p>${role}</p>
-              </div>
-            </div>
-    `
   } 
   
   function getMember(){
@@ -71,11 +71,9 @@ let teamCont = document.querySelector('.team-container');
     
   } 
   
-  
   let buttonCreate = document.getElementById('addMemberButton');
 
   buttonCreate.addEventListener('click', function(){
-    
     
     team.push(getMember());
   

@@ -31,37 +31,55 @@ const team = [
   },
 ];
 
+
 let teamCont = document.querySelector('.team-container');
 
+  for(i=0; i<team.length; i++){
 
-
-  for(i=1; i<team.length; i++){
+    teamContainer(team[i].name,team[i].role,team[i].image);
+  }
+  
+  function teamContainer (name,role,image){
 
     teamCont.innerHTML +=`
     <div class="team-card">
               <div class="card-image">
                 <img
-                  src="img/${team[i].image}"
-                  alt="${team[i].name}"
+                  src="img/${image}"
+                  alt="${name}"
                 />
               </div>
               <div class="card-text">
-                <h3>${team[i].name}</h3>
-                <p>${team[i].role}</p>
+                <h3>${name}</h3>
+                <p>${role}</p>
               </div>
             </div>
     `
   }
+  
+  function getMember(){
 
+    let newCard = {};
+    
+    newCard.name = document.getElementById('name').value;
+    newCard.role = document.getElementById('role').value;
+    newCard.image = document.getElementById('image').value;
+
+    teamContainer(newCard.name,newCard.role,newCard.image);
+    
+    return newCard;
+    
+  }
+  
+  
   let buttonCreate = document.getElementById('addMemberButton');
 
   buttonCreate.addEventListener('click', function(){
-
     
-
-
+    
+    team.push(getMember());
+  
   })
-
 
 
 

@@ -53,6 +53,15 @@ let teamCont = document.querySelector('.team-container');
     `
   }
 
+  let buttonCreate = document.getElementById('addMemberButton');
+
+  buttonCreate.addEventListener('click', function(){
+
+    
+
+
+  })
+
 
 
 
